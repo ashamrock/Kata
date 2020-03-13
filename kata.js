@@ -35,7 +35,9 @@ function secondVariable(){
 
 // Totals firstNumber and secondNumber
 function total(){
-  solution = parseInt(firstNumber) + parseInt(secondNumber)
+  if (operator === "+") { 
+    solution = parseInt(firstNumber) + parseInt(secondNumber)
+  }
   document.getElementById('solution').innerHTML = solution;
 }
 
