@@ -12,6 +12,9 @@ function firstVariable(){
   document.onkeyup = function (event) { 
     if (event.key >= 0) { 
       firstNumber += event.key
+      if (firstNumber > 999) {
+        firstNumber = ""
+      }
       document.getElementById('first-number').innerHTML = firstNumber;
     } // Displays operator when pressed
     else if (event.key === "*"||"/"||"+"||"-"){
@@ -27,6 +30,9 @@ function secondVariable(){
   document.onkeyup = function (event) { 
     if (event.key >= 0) { 
       secondNumber += event.key
+      if (secondNumber > 999) {
+        secondNumber = ""
+      }
       document.getElementById('second-number').innerHTML = secondNumber;
     }
     total()
