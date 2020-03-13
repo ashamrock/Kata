@@ -13,7 +13,7 @@ function firstVariable(){
     if (event.key >= 0) { 
       firstNumber += event.key
       if (firstNumber > 999) {
-        firstNumber = 999
+        firstNumber = ""
       }
       document.getElementById('first-number').innerHTML = firstNumber;
     } else if (event.key === "*"||"/"||"+"||"-"||"x"){
@@ -36,8 +36,9 @@ function secondVariable(){
         secondNumber = ""
       }
       document.getElementById('second-number').innerHTML = secondNumber;
+    } else if (event.key === "Enter" || "="){
+      total()
     }
-    total()
   }
 }
 
@@ -54,6 +55,9 @@ function total(){
   }
   if (operator === "-") { 
     solution = parseInt(firstNumber) - parseInt(secondNumber)
+  }
+  if (firstNumber === "" || secondNumber === ""){
+    solution = 0
   }
   document.getElementById('solution').innerHTML = solution;
   resetFunction()
