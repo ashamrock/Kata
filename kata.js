@@ -13,7 +13,7 @@ function firstVariable(){
       console.log(event.key)
       document.getElementById('first-number').innerHTML = firstNumber;
     } // Displays operator when pressed
-    else if (event.key === "+"){
+    else if (event.key === "*"||"/"||"+"||"-"){
       operator = event.key
       console.log(event.key)
       document.getElementById('operator').innerHTML = operator
