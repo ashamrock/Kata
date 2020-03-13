@@ -13,12 +13,14 @@ function firstVariable(){
     if (event.key >= 0) { 
       firstNumber += event.key
       if (firstNumber > 999) {
-        firstNumber = ""
+        firstNumber = 999
       }
       document.getElementById('first-number').innerHTML = firstNumber;
-    } // Displays operator when pressed
-    else if (event.key === "*"||"/"||"+"||"-"){
+    } else if (event.key === "*"||"/"||"+"||"-"||"x"){
       operator = event.key
+      if (operator === "Enter") { 
+        operator = "+"
+      }
       document.getElementById('operator').innerHTML = operator
       secondVariable()
     }
@@ -41,7 +43,7 @@ function secondVariable(){
 
 // Solves firstNumber and secondNumber based on operator selected
 function total(){
-  if (operator === "*") { 
+  if (operator === "*"||"x") { 
     solution = parseInt(firstNumber) * parseInt(secondNumber)
   }
   if (operator === "/") { 
@@ -57,6 +59,7 @@ function total(){
   resetFunction()
 }
 
+// Resets everything to null and starts functions over
 function resetFunction(){
   firstNumber = ""  
   operator = ""
