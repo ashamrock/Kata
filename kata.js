@@ -54,6 +54,15 @@ function total(){
     solution = parseInt(firstNumber) - parseInt(secondNumber)
   }
   document.getElementById('solution').innerHTML = solution;
+  resetFunction()
+}
+
+function resetFunction(){
+  firstNumber = ""  
+  operator = ""
+  secondNumber = ""
+  solution = ""
+firstVariable()
 }
 
 
