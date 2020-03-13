@@ -33,12 +33,22 @@ function secondVariable(){
   }
 }
 
-// Totals firstNumber and secondNumber
+// Solves firstNumber and secondNumber based on operator selected
 function total(){
+  if (operator === "*") { 
+    solution = parseInt(firstNumber) * parseInt(secondNumber)
+  }
+  if (operator === "/") { 
+    solution = parseInt(firstNumber) / parseInt(secondNumber)
+  }
   if (operator === "+") { 
     solution = parseInt(firstNumber) + parseInt(secondNumber)
   }
+  if (operator === "-") { 
+    solution = parseInt(firstNumber) - parseInt(secondNumber)
+  }
   document.getElementById('solution').innerHTML = solution;
 }
+
 
 });
