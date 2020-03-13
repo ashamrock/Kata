@@ -3,6 +3,7 @@ $(document).ready(function() {
 var firstNumber = ""  
 var operator = ""
 var secondNumber = ""
+var solution = ""
 
 firstVariable()
 
@@ -28,8 +29,14 @@ function secondVariable(){
       secondNumber += event.key
       document.getElementById('second-number').innerHTML = secondNumber;
     }
+    total()
   }
 }
 
+// Totals firstNumber and secondNumber
+function total(){
+  solution = parseInt(firstNumber) + parseInt(secondNumber)
+  document.getElementById('solution').innerHTML = solution;
+}
 
 });
